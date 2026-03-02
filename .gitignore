@@ -1,0 +1,51 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# Data — raw & processed (no subir corpus ni embeddings)
+data/raw/
+data/processed/
+*.pdf
+
+# Chroma / FAISS persisted indexes
+chroma_db/
+faiss_index/
+*.index
+*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Tests coverage
+.coverage
+htmlcov/
+.pytest_cache/
