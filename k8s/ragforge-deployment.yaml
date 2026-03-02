@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ragforge-api
+  namespace: ragforge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ragforge-api
+  template:
+    metadata:
+      labels:
+        app: ragforge-api
+    spec:
+      containers:
+        - name: ragforge-api
+          image: ragforge-api:0.3.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: CHROMA_HOST
+              value: "chroma.ragforge.svc.cluster.local"
+            - name: CHROMA_PORT
+              value: "8000"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 20
