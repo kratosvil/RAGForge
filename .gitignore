@@ -1,3 +1,6 @@
+# Contexto de sesión — archivo personal, nunca al repo
+CONTEXT.md
+
 # Environment
 .env
 .env.*
