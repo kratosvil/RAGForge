@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ragforge-api
-          image: ragforge-api:0.3.0
+          image: ragforge-api:0.7.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
